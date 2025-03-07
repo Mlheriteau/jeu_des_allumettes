@@ -1,0 +1,61 @@
+body {
+  background-color: #F1F0FF ;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 20px;
+  
+
+}
+  
+h1{ 
+  -webkit-text-stroke: 1px rgb(169, 18, 18);
+  font-family: 'Futura Display', sans-serif;
+  font-weight: bold;
+  color :#fffb00;
+  font-size: 50px;
+  margin-bottom: px;
+}
+  
+  #message {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  #game-controls {
+    margin-top: 30px;
+  }
+  
+  button {
+    width: 100%;
+    background-color: #00fbff;
+    border-radius: 10px;
+    border: 2px solid #174be8;
+    font-size: 50px;
+    margin-bottom: 40px;
+  }
+  
+  button:disabled {
+    background-color: #bdc3c7;
+  }
+  
+  button:hover {
+    background-color: #ffd000;
+
+  }
+  
+  input {
+    width: 65%;
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+  }

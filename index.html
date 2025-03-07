@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu des Allumettes</title>
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+    <script src="game.js" defer></script> <!-- Lien vers le fichier JavaScript -->
+  </head>
+  <body>
+    <h1>Jeu des Allumettes</h1>
+    <p>Au départ, il y a un tas de 50 allumettes. Chaque joueur doit en retirer entre 1 à 6 allumettes. 
+        Le joueur qui retire la dernière allumette gagne !</p>
+
+    <!-- Choix du nombre de joueurs -->
+    <div id="choix-joueurs">
+        <label for="nombre-joueurs">Choisissez le nombre de joueurs :</label>
+        <input type="number" id="nombre-joueurs" min="2" max="10" placeholder="Entrez le nombre de joueurs">
+        <button id="commencer">Commencer le jeu</button>
+    </div>
+
+    <!-- Message de jeu -->
+    <div id="message">Il reste 50 allumettes.</div>
+    
+    <!-- Contrôles du jeu (initialement cachés) -->
+    <div id="game-controls" style="display: none;">
+      <p id="tour-message">C'est au tour du Joueur 1</p> <!-- Affiche le tour actuel -->
+      <input type="number" id="nombre" min="1" max="6" placeholder="Combien d'allumettes ?"/>
+      <button id="retirerAllumettes">Retirez des allumettes</button>
+    </div>
+
+    <!-- Bouton Rejouer (initialement caché) -->
+    <div id="rejouer-section" style="display: none;">
+      <button id="rejouer">Rejouer</button>
+    </div>
+
+  </body>
+</html>

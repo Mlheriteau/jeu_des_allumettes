@@ -1,42 +1,72 @@
 body {
-  background-color: #F1F0FF ;
+
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-size: 16px;
+  margin-top: 5px; /* Déplace le titre de 20 pixels vers le haut */
   text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 10px;
   margin-bottom: 20px;
-  
+  background-image: url('images/map street fighter.jpg');
+  background-size: cover;/* L'image couvrira tout l'élément */
+  background-position: center; /* Centrer l'image si elle est redimensionnée */
+  height: 100vh; /* Prendre toute la hauteur de la fenêtre */
 
 }
   
-h1{ 
-  -webkit-text-stroke: 1px rgb(169, 18, 18);
-  font-family: 'Futura Display', sans-serif;
+h1 { 
+  border: 2px solid #ff0000; /* Bordure rouge de 2px */
+  padding: 10px; /* Espacement interne entre le texte et la bordure */
+  background-color: #7da56c78; /* Couleur de fond */
+  width: fit-content; /* Largeur qui s'ajuste à la taille du contenu */
+  margin: 5px; /* Marge autour de l'encadré */
+  border-radius: 10px; /* Coins arrondis */
   font-weight: bold;
   color :#fffb00;
   font-size: 50px;
-  margin-bottom: px;
+  margin-bottom: 5px;
+
 }
   
+p { 
+  -webkit-text-stroke: 1px rgb(248, 14, 14);
+  font-weight: bold;
+  color :#fffb00;
+  font-size: 30px;
+  margin-bottom: 5px;
+  border: 2px solid #ff0000; /* Bordure noire de 2px */
+  padding: 4px; /* Espacement interne entre le texte et la bordure */
+  background-color: #7da56c8f; /* Couleur de fond (facultatif) */
+  width: fit-content; /* Largeur qui s'ajuste à la taille du contenu */
+  margin: 5px; /* Marge autour de l'encadré */
+  border-radius: 10px; /* Coins arrondis (facultatif) */
+}
+
   #message {
     font-size: 1.5em;
     font-weight: bold;
     margin-top: 20px;
+    color :#ffffff;
   }
   
   #game-controls {
     margin-top: 30px;
+    
+  }
+
+  #tour-message {
+    color :#ffffff;
   }
   
+  
   button {
+    font-family: "Quicksand", sans-serif;
     width: 100%;
-    background-color: #00fbff;
+    background-color: #1ce8e8ac;
     border-radius: 10px;
-    border: 2px solid #174be8;
+    border: 2px solid #28c335;
     font-size: 50px;
     margin-bottom: 40px;
   }
@@ -46,10 +76,17 @@ h1{
   }
   
   button:hover {
-    background-color: #ffd000;
+    background-color: #00ff1537;
 
   }
-  
+
+  #text_number_player {
+    padding: 5px;
+    margin-top: 20px;
+    text-align: center;
+    color :#ffffff;
+  }
+
   input {
     width: 65%;
     font-size: 30px;
@@ -58,4 +95,139 @@ h1{
     border-radius: 10px;
     margin-right: 10px;
     margin-bottom: 40px;
+    margin-top: 20px;
   }
+
+#zangief {
+  top: 65%; /* Positionne à 80% du haut de la page */
+  left: 50%; /* Positionne à 50% du côté gauche de la page */
+  transform: translateX(-50%); /* Centre l'image horizontalement */
+  z-index: 2; /* Cette image sera devant image7 grâce à un z-index plus élevé */
+  position: absolute; /* Positionne les images de manière absolue */
+  position: center; /* Permet de positionner l'image de manière absolue */
+  width: 14%; /* Ajuste la taille de l'image */
+  align-items: flex-end; /* Aligner le contenu en bas de la page */
+  }
+
+#ryu {
+  top: 68%; /* Positionne à 80% du haut de la page */
+  left: 89%; /* Positionne à 50% du côté gauche de la page */
+  transform: translateX(-50%); /* Centre l'image horizontalement */
+  z-index: 3; /* Cette image sera devant image7 grâce à un z-index plus élevé */
+  position: absolute; /* Positionne les images de manière absolue */
+  position: center; /* Permet de positionner l'image de manière absolue */
+  width: 16%; /* Ajuste la taille de l'image */
+  align-items: flex-end; /* Aligner le contenu en bas de la page */
+  }
+
+#ken {
+  top: 60%; /* Positionne à 80% du haut de la page */
+  left: 10%; /* Positionne à 50% du côté gauche de la page */
+  transform: translateX(-50%); /* Centre l'image horizontalement */
+  z-index: 3; /* Cette image sera devant image7 grâce à un z-index plus élevé */
+  position: absolute; /* Positionne les images de manière absolue */
+  position: center; /* Permet de positionner l'image de manière absolue */
+  width: 25%; /* Ajuste la taille de l'image */
+  align-items: flex-end; /* Aligner le contenu en bas de la page */
+    }
+
+/* Animation de déplacement de gauche à droite et apparition/disparition */
+@keyframes deplacementGaucheDroite {
+  0% {
+    left: 14%;  /* Position initiale à gauche */
+    opacity: 0;  /* Invisible au début */
+    visibility: hidden;  /* L'élément est caché */
+  }
+  50% {
+    left: 14%;  /* Se déplace vers le centre */
+    opacity: 1;  /* Visible à moitié de l'animation */
+    visibility: visible;  /* L'élément devient visible */
+  }
+  100% {
+    left: 41%;  /* Se déplace complètement à droite */
+    opacity: 1;  /* Disparaît à la fin */
+    visibility: hidden;  /* L'élément devient invisible à la fin */
+  }
+}
+
+/* Animation de déplacement de droite à gauche et apparition/disparition */
+@keyframes deplacementDroiteGauche {
+  0% {
+    right: 14%;  /* Position initiale à droite */
+    opacity: 0;  /* Invisible au début */
+    visibility: hidden;  /* L'élément est caché */
+  }
+  50% {
+    right: 14%;  /* Se déplace vers le centre */
+    opacity: 1;  /* Visible à moitié de l'animation */
+    visibility: visible;  /* L'élément devient visible */
+  }
+  100% {
+    right: 41%;  /* Se déplace complètement à gauche */
+    opacity: 1;  /* Disparaît à la fin */
+    visibility: hidden;  /* L'élément devient invisible à la fin */
+  }
+}
+
+/* Style général pour les éléments en mouvement */
+.boulle-deplacement {
+  position: absolute;
+  top: 70%;
+  width: 10%;  /* Ajustez la taille de l'image */
+  z-index: 3;
+  animation-duration: 2s;  /* Durée de l'animation */
+  animation-timing-function: ease-in-out;  /* Animation fluide */
+  animation-fill-mode: forwards;  /* L'élément garde son état final après l'animation */
+  opacity: 0;  /* L'image est invisible par défaut */
+  visibility: hidden;  /* L'image est cachée par défaut */
+}
+
+/* Appliquer l'animation de déplacement gauche à droite pour Ken */
+.boulle-ken {
+  animation-name: deplacementGaucheDroite;
+}
+
+/* Appliquer l'animation de déplacement droite à gauche pour Ryu */
+.boulle-ryu {
+  animation-name: deplacementDroiteGauche;
+}
+
+/* Animation de feu_allumette */
+/* Appliquer l'animation de feu_allumette */
+.feu_allumette {
+  position: absolute;
+  top: 60%;  /* Position verticale fixe */
+  width: 12%;  /* Ajustez la taille de l'image */
+  z-index: 3;
+  animation-name: deplacementFeuAllumette;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;  /* L'élément garde son état final après l'animation */
+}
+
+/* Animation de feu_allumette */
+@keyframes deplacementFeuAllumette {
+  0% {
+    opacity: 0;  /* Invisible au début */
+    visibility: hidden;  /* Caché au début */
+  }
+  50% {
+    opacity: 1;  /* Devenir visible à la fin */
+    visibility: visible;  /* Devient visible à la fin */
+  }
+  100% {
+    opacity: 1;  /* Devenir visible à la fin */
+    visibility: visible;  /* Devient visible à la fin */
+  }
+  
+}
+
+#image_fin_jeu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  z-index: 10; /* Vous pouvez ajuster le z-index si nécessaire */
+  display: none; /* L'image est cachée par défaut */
+}

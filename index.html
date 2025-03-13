@@ -9,12 +9,15 @@
   </head>
   <body>
     <h1>Jeu des Allumettes</h1>
-    <p>Au départ, il y a un tas de 50 allumettes. Chaque joueur doit en retirer entre 1 à 6 allumettes. 
+        <p>Au départ, il y a un tas de 50 allumettes. Chaque joueur doit en retirer entre 1 à 6 allumettes. 
         Le joueur qui retire la dernière allumette gagne !</p>
 
     <!-- Choix du nombre de joueurs -->
-    <div id="choix-joueurs">
+    <div id="text_number_player">
         <label for="nombre-joueurs">Choisissez le nombre de joueurs :</label>
+      </div>
+
+    <div id="choix-joueurs">
         <input type="number" id="nombre-joueurs" min="2" max="10" placeholder="Entrez le nombre de joueurs">
         <button id="commencer">Commencer le jeu</button>
     </div>
@@ -24,8 +27,9 @@
     
     <!-- Contrôles du jeu (initialement cachés) -->
     <div id="game-controls" style="display: none;">
-      <p id="tour-message">C'est au tour du Joueur 1</p> <!-- Affiche le tour actuel -->
-      <input type="number" id="nombre" min="1" max="6" placeholder="Combien d'allumettes ?"/>
+      <div id="tour-message"><p> C'est au tour du Joueur 1</p> <!-- Affiche le tour actuel -->
+      </div>
+      <input type="number" id="nombre" min="1" max="6" placeholder="Combien d'allumettes vous retirez ?"/>
       <button id="retirerAllumettes">Retirez des allumettes</button>
     </div>
 
@@ -33,6 +37,19 @@
     <div id="rejouer-section" style="display: none;">
       <button id="rejouer">Rejouer</button>
     </div>
+    <!-- Images des personnages -->
+    <img src="images/zangief(54).png" id="zangief" alt="zangief">
+    
+    <img src="images/ryu(42).png" id="ryu" alt="ryu">
+    <img src="images/ken.png" id="ken" alt="ken">
+
+    <!-- Images pour les animations boulle ken/ryu -->
+    <img class="boulle-deplacement boulle-ken" src="images/boulle_ken.png" id="boulle_ken" alt="boulle_ken">
+    <img class="boulle-deplacement boulle-ryu" src="images/boulle_ryu.png" id="boulle_ryu" alt="boulle_ryu">
+    <img class="boulle-deplacement feu_allumette" src="images/feu_allumette.png" id="feu_allumette" alt="Feu Allumette">
+
+    <!-- Image à afficher à la fin du jeu -->
+    <img src="images/rejouer.png" id="image_fin_jeu" alt="Feu Allumette" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20%; z-index: 10;">
 
   </body>
 </html>

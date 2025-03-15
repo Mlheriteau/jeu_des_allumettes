@@ -6,6 +6,7 @@ body {
   margin-top: 5px; /* Déplace le titre de 20 pixels vers le haut */
   text-align: center;
   display: flex;
+  position: relative;
   align-items: center;
   flex-direction: column;
   margin-bottom: 20px;
@@ -192,42 +193,6 @@ p {
   animation-name: deplacementDroiteGauche;
 }
 
-/* Animation de feu_allumette */
-/* Appliquer l'animation de feu_allumette */
-.feu_allumette {
-  position: absolute;
-  top: 60%;  /* Position verticale fixe */
-  width: 12%;  /* Ajustez la taille de l'image */
-  z-index: 3;
-  animation-name: deplacementFeuAllumette;
-  animation-duration: 5s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;  /* L'élément garde son état final après l'animation */
-}
-
-/* Animation de feu_allumette */
-@keyframes deplacementFeuAllumette {
-  0% {
-    opacity: 0;  /* Invisible au début */
-    visibility: hidden;  /* Caché au début */
-  }
-  50% {
-    opacity: 1;  /* Devenir visible à la fin */
-    visibility: visible;  /* Devient visible à la fin */
-  }
-  100% {
-    opacity: 1;  /* Devenir visible à la fin */
-    visibility: visible;  /* Devient visible à la fin */
-  }
-  
-}
-
 #image_fin_jeu {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  z-index: 10; /* Vous pouvez ajuster le z-index si nécessaire */
-  display: none; /* L'image est cachée par défaut */
+  margin-top: 300px;
 }

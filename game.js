@@ -43,10 +43,10 @@ function mettreAJourAffichage() {
         // Vérifier quel personnage est actif et ajuster la position en conséquence
         if (bouleActuelle.id === 'boulle_ken') {
             // Si Ken est actif, positionner l'image à gauche
-            feuAllumette.style.left = '50%';  // Position à gauche
+            feuAllumette.style.left = '4%';  // Position à gauche
         } else if (bouleActuelle.id === 'boulle_ryu') {
             // Si Ryu est actif, positionner l'image à droite
-            feuAllumette.style.left = '70%';  // Position à droite
+            feuAllumette.style.left = '51%';  // Position à droite
         }
 
         feuAllumette.style.display = 'block';  // Afficher l'image feu_allumette
@@ -63,15 +63,6 @@ function mettreAJourAffichage() {
         }
     }, 2000);  // Ajustez cette valeur en fonction de la durée de votre animation
 }
-
-
-    // Attendre la fin de l'animation et ensuite cacher les boules
-    setTimeout(function () {
-        if (bouleActuelle) {
-            bouleActuelle.style.display = 'none';  // Cacher la boule après l'animation
-        }
-    }, 2000);  // Ajustez cette valeur en fonction de la durée de votre animation
-
 
 // Mettre à jour l'affichage du tour actuel
 function mettreAJourTour() {
@@ -98,14 +89,17 @@ function jouerTour() {
         
         // Afficher l'image de fin de jeu après la dernière allumette
         document.getElementById("image_fin_jeu").style.display = 'block';
+
+                // Cacher l'image zangief à la fin du jeu
+                document.getElementById('zangief').style.display = 'none';  // Cacher Zangief à la fin du jeu
         
         return;
     }
 
     // Passer au joueur suivant
-    if (joueur > nombreMaxJoueur) {
+    if (joueur >= nombreMaxJoueur) {
         joueur = 1; // Si on a atteint le nombre max de joueurs, revenir au premier joueur
-    }else{
+    } else {
         joueur++;
     }
 
@@ -128,6 +122,9 @@ function demarrerJeu() {
     document.getElementById('text_number_player').style.display = 'none'; // Cache la section
     document.getElementById('game-controls').style.display = 'block';
 
+    // Réinitialiser la variable joueur pour démarrer avec le premier joueur
+    joueur = 1;  // Réinitialisation de la variable joueur
+
     jeuEnCours = true;
 
     mettreAJourTour();
@@ -137,7 +134,7 @@ function demarrerJeu() {
 function rejouer() {
     // Réinitialiser les variables
     allumettesRestantes = 50;
-    joueur = 1;
+    joueur = 1;  // Réinitialisation de joueur
 
     // Cacher l'image de fin de jeu lors de la reprise
     document.getElementById("image_fin_jeu").style.display = 'none';  // Masquer l'image de fin de jeu
@@ -155,6 +152,9 @@ function rejouer() {
 
     // Réinitialiser le bouton "Retirer des allumettes"
     document.getElementById("retirerAllumettes").disabled = false;
+
+    // Réafficher l'image zangief au redémarrage du jeu
+    document.getElementById('zangief').style.display = 'block';  // Afficher Zangief au redémarrage du jeu
 }
 
 // Ajouter un événement pour le bouton de démarrage du jeu
